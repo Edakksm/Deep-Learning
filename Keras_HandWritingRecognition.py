@@ -58,7 +58,7 @@ histor = model.fit(X_train, y_train, batch_size=128, epochs=2,validation_data=(X
 print(histor.history)
 
 model.load_weights('./models/weights.02-0.03.hdf5')
-histor = model.fit(X_train, y_train, batch_size=50, epochs=20000,validation_data=(X_test, y_test), callbacks=callbacks)
+histor = model.fit(X_train, y_train, batch_size=50, epochs=50,validation_data=(X_test, y_test), callbacks=callbacks)
 
 loss, accuracy = model.evaluate(X_test, y_test)
 
@@ -75,12 +75,3 @@ for i in range(1, 10):
     print(c)
     print(predictions[i])
 
-#with open('./models/hist.p', 'wb') as f:
- #   pickle.dump(histor.history, f)
-
-#json_file = model.to_json()
-#with open('model.json','w') as json_file:
- #   json_file.write(json_file)
-#model.sample_weights('model.h5')
-
-#model.load_weights()
